@@ -37,14 +37,5 @@
       8px, 3vw, 14px
       )
   }
-  .animate-slideIn-6 {
-    animation: slideIn 1s ease;
-  }
-  .animate-slideIn-7 {
-    animation: slideIn 1.1s ease;
-  }
-  .animate-slideIn-8 {
-    animation: slideIn 1.2s ease;
-  }
 
   

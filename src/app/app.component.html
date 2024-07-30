@@ -4,16 +4,19 @@
       MAYUR GURAV
     </div>
     <div class="hidden 900px:flex space-x-4">
-      <a routerLink="/about" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-2">
+      <a routerLink="/about" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-2 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100" >
         About
       </a>
-      <a routerLink="/experience" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-3">
+      <a routerLink="/experience" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-3 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
         Experience
       </a>
-      <a routerLink="/projects" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-4">
+      <a routerLink="/projects" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-4 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
         Projects
       </a>
-      <a routerLink="/contact" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-5">
+      <a routerLink="/personal" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-2 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
+        Personal
+      </a>
+      <a routerLink="/contact" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-5 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
         Contact
       </a>
     </div>
@@ -34,6 +37,9 @@
     </a>
     <a routerLink="/projects" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
       Projects
+    </a>
+    <a routerLink="/personal" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
+      Personal
     </a>
     <a routerLink="/contact" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
       Contact

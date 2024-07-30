@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ProfileDetailsComponent {
   constructor(private router : Router){}
 
-  navigateToAbout(){
-    this.router.navigate(['about']);
+  navigateToPersonal(){
+    this.router.navigate(['personal']);
   }
 }
