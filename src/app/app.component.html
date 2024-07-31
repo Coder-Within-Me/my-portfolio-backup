@@ -1,22 +1,22 @@
-<nav class="bg-white text-black p-2 fixed w-full top-0 z-40">
+<nav class="bg-white text-black p-2 bg-sky-50 fixed w-full shadow-md top-0 z-40 hover:bg-sky-100">
   <div class="container mx-auto flex items-center justify-between">
-    <div class="text-lg font-bold tracking-wider hover:text-blue-700 uppercase wave-in delay-1">
+    <div class="text-lg tracking-[0.2em] font-semibold hover:text-sky-500 uppercase wave-in delay-1">
       MAYUR GURAV
     </div>
     <div class="hidden 900px:flex space-x-4">
-      <a routerLink="/about" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-2 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100" >
+      <a routerLink="/about" routerLinkActive="text-blue-700 font-semibold" class="text-black tracking-[0.25em] hover:text-blue-700 uppercase tracking-wider text-xs wave-in delay-2 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100" >
         About
       </a>
-      <a routerLink="/experience" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-3 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
+      <a routerLink="/experience" routerLinkActive="text-blue-700 font-semibold"  class="text-black tracking-[0.25em] hover:text-blue-700 uppercase tracking-wider text-xs wave-in delay-3 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
         Experience
       </a>
-      <a routerLink="/projects" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-4 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
+      <a routerLink="/projects" routerLinkActive="text-blue-700 font-semibold"  class="text-black tracking-[0.25em] hover:text-blue-700 uppercase tracking-wider text-xs wave-in delay-4 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
         Projects
       </a>
-      <a routerLink="/personal" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-2 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
+      <a routerLink="/personal" routerLinkActive="text-blue-700 font-semibold"  class="text-black tracking-[0.25em] hover:text-blue-700 uppercase tracking-wider text-xs wave-in delay-2 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
         Personal
       </a>
-      <a routerLink="/contact" class="text-black hover:text-blue-700 uppercase tracking-wider text-sm wave-in delay-5 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
+      <a routerLink="/contact" routerLinkActive="text-blue-700 font-semibold"  class="text-black tracking-[0.25em] hover:text-blue-700 uppercase tracking-wider text-xs wave-in delay-5 before:bg-violet-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
         Contact
       </a>
     </div>
@@ -29,33 +29,41 @@
   </div>
   <div *ngIf="menuOpen" class="fixed inset-0 bg-black bg-opacity-5 z-40" (click)="toggleMenu()"></div>
   <div *ngIf="menuOpen" class="fixed top-14 right-3 mt-2 w-32 p-3 space-y-4 bg-white shadow-2xl shadow-gray-400 transform translate-x-full transition-transform duration-300 ease-out animate-popup z-40">
-    <a routerLink="/about" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
+    <a routerLink="/about" routerLinkActive="text-blue-700 font-semibold"  (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
       About
     </a>
-    <a routerLink="/experience" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
+    <a routerLink="/experience" routerLinkActive="text-blue-700 font-semibold"  (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
       Experience
     </a>
-    <a routerLink="/projects" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
+    <a routerLink="/projects" routerLinkActive="text-blue-700 font-semibold"  (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
       Projects
     </a>
-    <a routerLink="/personal" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
+    <a routerLink="/personal" routerLinkActive="text-blue-700 font-semibold"  (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
       Personal
     </a>
-    <a routerLink="/contact" (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
+    <a routerLink="/contact" routerLinkActive="text-blue-700 font-semibold"  (click)="toggleMenu()" class="block text-black uppercase text-sm px-4 py-2">
       Contact
     </a>
   </div>
   
 </nav>
 
-<div class="mt-8 flex flex-col 900px:flex-row min-h-screen bg-gray-100">
+<div class="mt-12 flex flex-col 900px:flex-row min-h-screen bg-gray-150">
   <div class="hidden 900px:block w-96 p-6 fixed">
     <app-profile-details></app-profile-details>
+    <div class="text-gray-600 mt-2 flex items-center delay-5">
+      <fa-icon [icon]="faCopyright" size="xs"></fa-icon>
+      <span class="ml-1 text-xs">MAYUR GURAV</span>
+    </div>
   </div>
   <div class="flex-1 overflow-y-auto 900px:ml-96 p-4">
     <router-outlet></router-outlet>
   </div>
   <div class="block 900px:hidden mt-6 m-6">
     <app-profile-details></app-profile-details>
+    <div class="text-gray-600 mt-2 flex items-center delay-5">
+      <fa-icon [icon]="faCopyright" size="xs"></fa-icon>
+      <span class="ml-1 text-xs">MAYUR GURAV</span>
+    </div>
   </div>
 </div>

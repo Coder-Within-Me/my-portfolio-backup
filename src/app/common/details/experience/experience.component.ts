@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { SkillsComponent } from '../../skills/skills.component';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [],
+  imports: [SkillsComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })

@@ -3,7 +3,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProfileDetailsComponent } from './common/profile/profile-details/profile-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faCopyright } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   faBars = faBars;
   faXmark = faXmark;
+  faCopyright = faCopyright;
 
   menuOpen = false;
 
