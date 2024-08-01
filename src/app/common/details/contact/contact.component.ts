@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SocialIconsComponent } from '../../profile/social-icons/social-icons.component';
+import { StylingService } from '../../../service/styling.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,5 +10,11 @@ import { SocialIconsComponent } from '../../profile/social-icons/social-icons.co
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
+  stylingService = inject(StylingService);
 
+  currentColor: string = '';
+
+  changeColor() {
+    this.currentColor = this.stylingService.getRandomBgColor();
+  }
 }

@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { ProfileDetailsComponent } from './common/profile/profile-details/profile-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faXmark, faCopyright } from '@fortawesome/free-solid-svg-icons';
@@ -18,6 +18,14 @@ export class AppComponent {
   faCopyright = faCopyright;
 
   menuOpen = false;
+
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.viewportScroller.scrollToPosition([0, 0]);
+      }
+    });
+  }
 
   toggleMenu() {
     this.menuOpen  = !this.menuOpen;

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { StylingService } from '../../../service/styling.service';
 
 @Component({
   selector: 'app-about',
@@ -11,5 +12,13 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class AboutComponent {
 
+  stylingService = inject(StylingService);
+
   faCheckCircle = faCheckCircle;
+
+  currentColor: string = '';
+
+  changeColor() {
+    this.currentColor = this.stylingService.getRandomBgColor();
+  }
 }

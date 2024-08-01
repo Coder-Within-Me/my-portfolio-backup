@@ -1,10 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { SkillsComponent } from '../../skills/skills.component';
+import { StylingService } from '../../../service/styling.service';
+import { ToolsUsedComponent } from '../../tools-used/tools-used.component';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [SkillsComponent],
+  imports: [SkillsComponent, ToolsUsedComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })
@@ -14,9 +16,17 @@ export class ExperienceComponent {
   timespan = signal<string>('1 month');
   timespanTotal = signal<string>('1 month');
 
+  stylingService = inject(StylingService);
+
+  currentColor: string = '';
+
   constructor(){
     this.timespan.set(this.formatYearsAndMonths(this.startDate));
     this.timespanTotal.set(this.formatYearsAndMonths(this.startDateTotal));
+  }
+
+  changeColor() {
+    this.currentColor = this.stylingService.getRandomBgColor();
   }
 
   formatYearsAndMonths(startDate: Date): string {

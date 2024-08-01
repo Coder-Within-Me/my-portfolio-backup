@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { interval, map, Observable, take } from 'rxjs';
 
 interface Skill{
   skillname : string;
@@ -13,8 +14,9 @@ interface Skill{
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })
-export class SkillsComponent {
-  skills: Skill[] = [
+export class SkillsComponent implements OnInit {
+
+  skill: Skill[] = [
     { skillname: 'ADO.Net', img: '../../../assets/skills/visual-studio.png' },
     { skillname: '.Net MVC', img: '../../../assets/skills/Visual Studio.png' },
     { skillname: 'Microsoft Azure', img: '../../../assets/skills/azure.png' },
@@ -41,4 +43,19 @@ export class SkillsComponent {
     { skillname: '.Net Core Web API', img: '../../../assets/skills/visual-studio.png' },
     { skillname: 'MS SQL', img: '../../../assets/skills/database.png' },
   ];
+
+  skills: Skill[] = [];
+
+  ngOnInit(): void {
+    this.streamSkills().subscribe(s => {
+      this.skills.push(s);
+    });
+  }
+
+  streamSkills(): Observable<Skill> {
+    return interval(50).pipe(
+      take(this.skill.length),
+      map(x => this.skill[x])
+    );
+  }
 }
