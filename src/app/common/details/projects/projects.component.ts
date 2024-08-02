@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { StylingService } from '../../../service/styling.service';
 
 @Component({
   selector: 'app-projects',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  stylingService = inject(StylingService);
 
+  currentColor: string = '';
+
+  changeColor() {
+    this.currentColor = this.stylingService.getRandomBgColor();
+  }
 }

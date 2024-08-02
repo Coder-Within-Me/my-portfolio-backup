@@ -53,7 +53,7 @@ export class SkillsComponent implements OnInit {
   }
 
   streamSkills(): Observable<Skill> {
-    return interval(50).pipe(
+    return interval(100).pipe(
       take(this.skill.length),
       map(x => this.skill[x])
     );

@@ -2,11 +2,12 @@ import { Component, inject, signal } from '@angular/core';
 import { SkillsComponent } from '../../skills/skills.component';
 import { StylingService } from '../../../service/styling.service';
 import { ToolsUsedComponent } from '../../tools-used/tools-used.component';
+import { CardComponent } from '../../card/card.component';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [SkillsComponent, ToolsUsedComponent],
+  imports: [SkillsComponent, ToolsUsedComponent, CardComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })
