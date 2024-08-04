@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { StylingService } from '../../../service/styling.service';
+import { ProjectTemplateComponent } from '../../project-template/project-template.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [],
+  imports: [ProjectTemplateComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
