@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { interval, map, Observable, take } from 'rxjs';
 
-interface Skill{
+export interface Skill{
   skillname : string;
   img : string;
 }
@@ -34,13 +34,16 @@ export class SkillsComponent implements OnInit {
     { skillname: 'Entity Framework', img: '../../../assets/skills/EF.png' },
     { skillname: 'LinQ', img: '../../../assets/skills/linq.png' },
     { skillname: 'Microservices', img: '../../../assets/skills/microservice.png' },
+    { skillname: 'Docker', img: '../../../assets/tools/docker.png' },
     { skillname: 'HTML', img: '../../../assets/skills/html.png' },
     { skillname: 'CSS', img: '../../../assets/skills/css.png' },
+    { skillname: 'Open XML', img: '../../../assets/skills/xml.png' },
     { skillname: 'Tailwind CSS', img: '../../../assets/skills/tailwind css.png' },
     { skillname: 'Material UI', img: '../../../assets/skills/material ui.png' },
     { skillname: 'Angular', img: '../../../assets/skills/Angular.png' },
     { skillname: 'C#', img: '../../../assets/skills/c-sharp.png' },
     { skillname: '.Net Core Web API', img: '../../../assets/skills/visual-studio.png' },
+    { skillname: 'Telerik', img: '../../../assets/skills/telerik.png' },
     { skillname: 'MS SQL', img: '../../../assets/skills/database.png' },
   ];
 
