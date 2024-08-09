@@ -3,6 +3,7 @@ import { SkillsComponent } from '../../skills/skills.component';
 import { StylingService } from '../../../service/styling.service';
 import { ToolsUsedComponent } from '../../tools-used/tools-used.component';
 import { CardComponent } from '../../card/card.component';
+import { DateDiffCalculatorService } from '../../../service/date-diff-calculator.service';
 
 @Component({
   selector: 'app-experience',
@@ -18,39 +19,18 @@ export class ExperienceComponent {
   timespanTotal = signal<string>('1 month');
 
   stylingService = inject(StylingService);
+  dateDiffCalculatorService = inject(DateDiffCalculatorService);
 
   currentColor: string = '';
 
   constructor(){
-    this.timespan.set(this.formatYearsAndMonths(this.startDate));
-    this.timespanTotal.set(this.formatYearsAndMonths(this.startDateTotal));
+    this.timespan.set(this.dateDiffCalculatorService.formatYearsAndMonths(this.startDate));
+    this.timespanTotal.set(this.dateDiffCalculatorService.formatYearsAndMonths(this.startDateTotal));
   }
 
   changeColor() {
     this.currentColor = this.stylingService.getRandomBgColor();
   }
 
-  formatYearsAndMonths(startDate: Date): string {
-    const currentDate = new Date();
-    let years = currentDate.getFullYear() - startDate.getFullYear();
-    let months = currentDate.getMonth() - startDate.getMonth();
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    let result = '';
-    if (years > 0) {
-        result += `${years} year${years > 1 ? 's' : ''}`;
-    }
-    if (months > 0) {
-        if (result.length > 0) {
-            result += " ";
-        }
-        result += `${months} month${months > 1 ? 's' : ''}`;
-    }
-
-    return result || "1 month";
-  }
+ 
 }
