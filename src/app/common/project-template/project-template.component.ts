@@ -82,6 +82,7 @@ export class ProjectTemplateComponent {
       skills: [
         { skillname: 'Angular', img: '../../../assets/skills/Angular.png' },
         { skillname: 'TypeScript', img: '../../../assets/skills/typescript.png' },
+        { skillname: 'DevExtreme', img: '../../../assets/skills/devextreme.png' },
         { skillname: 'RxJS', img: '../../../assets/skills/rxjs.png' },
         { skillname: 'C#', img: '../../../assets/skills/c-sharp.png' },
         { skillname: '.Net Core Web API', img: '../../../assets/skills/visual-studio.png' },

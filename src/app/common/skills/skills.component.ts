@@ -40,6 +40,7 @@ export class SkillsComponent implements OnInit {
     { skillname: 'Open XML', img: '../../../assets/skills/xml.png' },
     { skillname: 'Tailwind CSS', img: '../../../assets/skills/tailwind css.png' },
     { skillname: 'Material UI', img: '../../../assets/skills/material ui.png' },
+    { skillname: 'DevExtreme', img: '../../../assets/skills/devextreme.png' },
     { skillname: 'Angular', img: '../../../assets/skills/Angular.png' },
     { skillname: 'C#', img: '../../../assets/skills/c-sharp.png' },
     { skillname: '.Net Core Web API', img: '../../../assets/skills/visual-studio.png' },
