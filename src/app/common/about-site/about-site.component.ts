@@ -10,6 +10,11 @@ interface Details{
   data : string;
 }
 
+interface Quote{
+  quote : string;
+  author : string;
+}
+
 @Component({
   selector: 'app-about-site',
   standalone: true,
@@ -23,6 +28,7 @@ export class AboutSiteComponent {
   dateDiffCalculatorService = inject(DateDiffCalculatorService);
 
   currentColor: string = '';
+  currentQuote: Quote = {} as Quote;
   startDate = new Date('2020-12-31');
   birthDate = new Date('1997-09-02');
   skills: Skill[] = [];
@@ -30,6 +36,21 @@ export class AboutSiteComponent {
   constructor(){
     this.details.filter(f => f.title == 'My Age')[0].data = this.dateDiffCalculatorService.formatYearsAndMonths(this.birthDate);
     this.details.filter(f => f.title == 'My Experience')[0].data = this.dateDiffCalculatorService.formatYearsAndMonths(this.startDate);
+  }
+
+  quotes: Quote[] = [
+    { quote: "Arise, awake, and stop not till the goal is reached.", author: "Swami Vivekananda" },
+    { quote: "Take up one idea. Make that one idea your life—think of it, dream of it, live on that idea.", author: "Swami Vivekananda" },
+    { quote: "In a day, when you don't come across any problems—you can be sure that you are traveling in a wrong path.", author: "Swami Vivekananda" },
+    { quote: "Technology is best when it brings people together.", author: "Matt Mullenweg" },
+    { quote: "The science of today is the technology of tomorrow.", author: "Edward Teller" },
+    { quote: "It's not that we use technology, we live technology.", author: "Godfrey Reggio" },
+    { quote: "The great aim of education is not knowledge but action.", author: "Swami Vivekananda" }
+];
+
+  getRandomQuote() {
+    const i = Math.floor(Math.random() * this.quotes.length);
+    this.currentQuote = this.quotes[i];
   }
 
   skill: Skill[] = [
@@ -53,6 +74,7 @@ export class AboutSiteComponent {
     this.streamSkills().subscribe(s => {
       this.skills.push(s);
     });
+    this.getRandomQuote();
   }
 
   streamSkills(): Observable<Skill> {

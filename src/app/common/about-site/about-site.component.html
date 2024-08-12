@@ -40,8 +40,13 @@
                     <hr class="border-1 border-gray-200 mb-6 mt-6 animate-slideIn-3">
                 </div>
                 
-                <div class="m-6 px-12 py-4 border shadow-md shadow-sky-500/50 animate-slideIn-9">
-                        
+                <div class="group flex justify-center flex-col items-center m-6 px-12 py-4 border shadow-md shadow-sky-500/50 hover:shadow-sky-500 animate-slideIn-9">
+                    <div class="font-serif text-gray-500 text-center text-lg italic group-hover:not-italic">
+                        "{{currentQuote.quote}}"
+                    </div>
+                    <div class="italic text-gray-500 group-hover:not-italic">
+                        - {{currentQuote.author}}
+                    </div>
                 </div>
             </div>
         </div>
