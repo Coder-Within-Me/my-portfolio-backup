@@ -41,11 +41,13 @@ export class AboutSiteComponent {
   quotes: Quote[] = [
     { quote: "Arise, awake, and stop not till the goal is reached.", author: "Swami Vivekananda" },
     { quote: "Take up one idea. Make that one idea your life—think of it, dream of it, live on that idea.", author: "Swami Vivekananda" },
+    { quote: "If people are not making mistakes, they are not trying new things. So if you want innovation, you need to accept failure.", author: "Vineet Nayar" },
     { quote: "In a day, when you don't come across any problems—you can be sure that you are traveling in a wrong path.", author: "Swami Vivekananda" },
     { quote: "Technology is best when it brings people together.", author: "Matt Mullenweg" },
     { quote: "The science of today is the technology of tomorrow.", author: "Edward Teller" },
-    { quote: "It's not that we use technology, we live technology.", author: "Godfrey Reggio" },
-    { quote: "The great aim of education is not knowledge but action.", author: "Swami Vivekananda" }
+    { quote: "Our future success is directly proportional to our ability to understand, adopt, and integrate new technology into our work.", author: "Sundar Pichai" },
+    { quote: "When the rate of change outside exceeds the rate of change inside, the end is in sight.", author: "Azim Premji" },
+    { quote: "Wear your failure as a badge of honor!", author: "Sundar Pichai" }
 ];
 
   getRandomQuote() {

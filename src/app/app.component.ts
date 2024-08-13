@@ -4,6 +4,8 @@ import { CommonModule, ViewportScroller } from '@angular/common';
 import { ProfileDetailsComponent } from './common/profile/profile-details/profile-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faXmark, faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { Title } from '@angular/platform-browser';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -19,12 +21,46 @@ export class AppComponent {
 
   menuOpen = false;
 
-  constructor(private router: Router, private viewportScroller: ViewportScroller) {
+  constructor(private titleService: Title, private router: Router, private viewportScroller: ViewportScroller) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.viewportScroller.scrollToPosition([0, 0]);
       }
     });
+  }
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.updateTitleBasedOnRoute();
+      });
+  }
+
+  updateTitleBasedOnRoute(): void {
+    const routePath = this.router.url;
+    let pageTitle = 'Mayur Gurav';
+
+    if (routePath.includes('about-site')) {
+      pageTitle = 'About Site - Mayur Gurav';
+    } 
+    else if (routePath.includes('about')) {
+      pageTitle = 'About - Mayur Gurav';
+    } 
+    else if (routePath.includes('experience')) {
+      pageTitle = 'Experience - Mayur Gurav';
+    } 
+    else if (routePath.includes('projects')) {
+      pageTitle = 'Projects - Mayur Gurav';
+    }
+    else if (routePath.includes('personal')) {
+      pageTitle = 'Personal Details - Mayur Gurav';
+    }
+    else if (routePath.includes('contact')) {
+      pageTitle = 'Contact - Mayur Gurav';
+    }
+
+    this.titleService.setTitle(pageTitle);
   }
 
   toggleMenu() {
